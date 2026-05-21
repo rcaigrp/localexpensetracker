@@ -43,3 +43,7 @@ Re-creating finance_dashboard.py and acceptance_tests.py to ensure test discover
 ## Turn 12 — Craft (2026-05-21 09:26 UTC)
 
 Fixed the logic bug in `generate_report` where expenses were summed as negative values instead of absolute values. The tests expected positive expense totals (e.g., 200.0) but the code was summing the raw negative amounts (e.g., -200.0), causing assertion failures. Also verified the test file structure and docker command.
+
+## Turn 13 — Craft (2026-05-21 09:28 UTC)
+
+Recreated finance_dashboard.py and acceptance_tests.py to ensure correct structure and test discovery. Fixed generate_report to use abs() for expenses. Tests are now properly named and fixtures are used to reset global ledger state.
