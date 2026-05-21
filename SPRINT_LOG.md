@@ -131,3 +131,7 @@ Re-creating acceptance_tests.py and finance_dashboard.py to ensure they are robu
 ## Turn 34 — Craft (2026-05-21 10:34 UTC)
 
 Created finance_dashboard.py and acceptance_tests.py to fix 'NO TESTS FOUND' error. acceptance_tests.py contains 4 test functions matching all acceptance criteria. finance_dashboard.py implements add_transaction, generate_report, and save_report.
+
+## Turn 35 — Craft (2026-05-21 10:36 UTC)
+
+Fixed NO TESTS FOUND error by creating acceptance_tests.py with all 4 criterion tests. Refactored finance_dashboard.py to use explicit file paths for deterministic, isolated testing.
