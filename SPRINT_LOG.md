@@ -63,3 +63,7 @@ The system reported 'NO TESTS FOUND', meaning `acceptance_tests.py` was missing 
 ## Turn 17 — Manager (2026-05-21 09:44 UTC)
 
 Finalizing LocalFinanceDashboard. Verifying acceptance criteria and marking project complete.
+
+## Turn 18 — Craft (2026-05-21 09:46 UTC)
+
+Recreating finance_dashboard.py and acceptance_tests.py to ensure all 4 acceptance criteria are met and tests are discovered by pytest.
