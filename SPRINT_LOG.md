@@ -39,3 +39,7 @@ Re-implemented finance_dashboard.py and acceptance_tests.py to fix NO TESTS FOUN
 ## Turn 11 — Craft (2026-05-21 09:22 UTC)
 
 Re-creating finance_dashboard.py and acceptance_tests.py to ensure test discovery works. Previous 'NO TESTS FOUND' indicates missing or misnamed test files.
+
+## Turn 12 — Craft (2026-05-21 09:26 UTC)
+
+Fixed the logic bug in `generate_report` where expenses were summed as negative values instead of absolute values. The tests expected positive expense totals (e.g., 200.0) but the code was summing the raw negative amounts (e.g., -200.0), causing assertion failures. Also verified the test file structure and docker command.
