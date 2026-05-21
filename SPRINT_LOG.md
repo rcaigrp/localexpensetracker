@@ -23,3 +23,7 @@ Re-implemented finance_dashboard.py and acceptance_tests.py to ensure all 4 acce
 ## Turn 7 — Craft (2026-05-21 09:15 UTC)
 
 Re-implemented finance_dashboard.py and acceptance_tests.py to fix 'NO TESTS FOUND' error. Ensured all acceptance criteria are tested with clear test functions. Tested locally in Docker.
+
+## Turn 8 — Craft (2026-05-21 09:17 UTC)
+
+The 'NO TESTS FOUND' error occurred because previous acceptance_tests.py lacked functions prefixed with 'test_'. I have recreated both finance_dashboard.py and acceptance_tests.py with robust implementations and properly named test functions. The tests use fixtures for ledger state isolation and verify all 4 acceptance criteria. I will run pytest with full paths and PYTHONPATH set to ensure imports resolve correctly in the isolated container.
