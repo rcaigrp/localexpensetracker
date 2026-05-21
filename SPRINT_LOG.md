@@ -91,3 +91,7 @@ Finalizing LocalFinanceDashboard. All 4 acceptance criteria have been met and te
 ## Turn 24 — Craft (2026-05-21 10:01 UTC)
 
 Recreating finance_dashboard.py and acceptance_tests.py to ensure valid structure and passing tests. The previous 'NO TESTS FOUND' error indicates the test file was missing or malformed.
+
+## Turn 25 — Manager (2026-05-21 10:12 UTC)
+
+
