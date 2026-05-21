@@ -7,6 +7,6 @@
     "check_budget_alert returns True if spending exceeds a threshold"
   ],
   "meeting_budget": 4,
-  "meetings_held": 1,
+  "meetings_held": 2,
   "status": "active"
 }

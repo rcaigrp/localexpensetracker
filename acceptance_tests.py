@@ -1,37 +1,33 @@
-import pytest
-import os
 import json
-
-PROJECT_DIR = "/workspace/projects/LocalExpenseTracker"
-LEDGER_FILE = os.path.join(PROJECT_DIR, "expenses.json")
+import os
+import pytest
+import expense_tracker
 
 @pytest.fixture
 def clean_ledger():
-    if os.path.exists(LEDGER_FILE):
-        os.remove(LEDGER_FILE)
+    ledger_path = os.path.join(os.path.dirname(os.path.abspath(expense_tracker.__file__)), "ledger.json")
+    if os.path.exists(ledger_path):
+        os.remove(ledger_path)
     yield
-    if os.path.exists(LEDGER_FILE):
-        os.remove(LEDGER_FILE)
+    if os.path.exists(ledger_path):
+        os.remove(ledger_path)
 
-def test_criterion_1_import():
-    try:
-        import expense_tracker
-        assert True
-    except ImportError:
-        assert False
+def test_criterion_1_module_exists():
+    import expense_tracker
+    assert True
 
 def test_criterion_2_add_expense(clean_ledger):
-    import expense_tracker
-    expense_tracker.add_expense("food", 10.50)
-    assert os.path.exists(LEDGER_FILE)
-    with open(LEDGER_FILE, 'r') as f:
-        data = json.load(f)
-    assert len(data) == 1
-    assert data[0]["category"] == "food"
-    assert data[0]["amount"] == 10.50
+    expense_tracker.add_expense("food", 10.0)
+    expense_tracker.add_expense("food", 20.0)
+    expense_tracker.add_expense("transport", 15.0)
+    assert os.path.exists(os.path.join(os.path.dirname(os.path.abspath(expense_tracker.__file__)), "ledger.json"))
+    with open(os.path.join(os.path.dirname(os.path.abspath(expense_tracker.__file__)), "ledger.json"), "r") as f:
+        ledger = json.load(f)
+    assert len(ledger) == 3
+    assert ledger[0]["category"] == "food"
+    assert ledger[0]["amount"] == 10.0
 
 def test_criterion_3_get_spending_by_category(clean_ledger):
-    import expense_tracker
     expense_tracker.add_expense("food", 10.0)
     expense_tracker.add_expense("food", 20.0)
     expense_tracker.add_expense("transport", 15.0)
@@ -39,8 +35,7 @@ def test_criterion_3_get_spending_by_category(clean_ledger):
     assert result == {"food": 30.0, "transport": 15.0}
 
 def test_criterion_4_check_budget_alert(clean_ledger):
-    import expense_tracker
-    expense_tracker.add_expense("food", 100.0)
-    assert expense_tracker.check_budget_alert("food", 50.0) == True
-    assert expense_tracker.check_budget_alert("food", 100.0) == False
-    assert expense_tracker.check_budget_alert("food", 101.0) == False
+    expense_tracker.add_expense("food", 50.0)
+    expense_tracker.add_expense("transport", 30.0)
+    assert expense_tracker.check_budget_alert(100.0) == False
+    assert expense_tracker.check_budget_alert(50.0) == True

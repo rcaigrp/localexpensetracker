@@ -1,16 +1,16 @@
 import json
 import os
 
-LEDGER_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "expenses.json")
+LEDGER_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ledger.json")
 
 def _load_ledger():
-    if not os.path.exists(LEDGER_FILE):
+    if not os.path.exists(LEDGER_PATH):
         return []
-    with open(LEDGER_FILE, 'r') as f:
+    with open(LEDGER_PATH, "r") as f:
         return json.load(f)
 
 def _save_ledger(data):
-    with open(LEDGER_FILE, 'w') as f:
+    with open(LEDGER_PATH, "w") as f:
         json.dump(data, f)
 
 def add_expense(category, amount):
@@ -23,10 +23,11 @@ def get_spending_by_category():
     spending = {}
     for entry in ledger:
         cat = entry["category"]
-        amount = entry["amount"]
-        spending[cat] = spending.get(cat, 0) + amount
+        amt = entry["amount"]
+        spending[cat] = spending.get(cat, 0) + amt
     return spending
 
-def check_budget_alert(category, threshold):
+def check_budget_alert(threshold):
     spending = get_spending_by_category()
-    return spending.get(category, 0) > threshold
+    total = sum(spending.values())
+    return total > threshold

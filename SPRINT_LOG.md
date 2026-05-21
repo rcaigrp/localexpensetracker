@@ -155,3 +155,7 @@ Sprint opened for LocalExpenseTracker. Creating acceptance_tests.py and expense_
 ## Turn 2 — Integrator (2026-05-21 10:45 UTC)
 
 Reviewing LocalExpenseTracker acceptance criteria. Running tests to verify completion.
+
+## Turn 1 — Manager (2026-05-21 10:47 UTC)
+
+Opened sprint LocalExpenseTracker. Implemented expense_tracker.py with core functions and acceptance_tests.py with 4 test functions. Running tests to verify all acceptance criteria.
