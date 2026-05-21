@@ -147,3 +147,7 @@ Rewrote acceptance_tests.py and finance_dashboard.py to ensure all 4 acceptance 
 ## Turn 38 — Craft (2026-05-21 10:41 UTC)
 
 Recreating finance_dashboard.py and acceptance_tests.py to fix 'NO TESTS FOUND' error. The previous files were likely missing or malformed. I will implement the module and tests from scratch and run them.
+
+## Turn 1 — Manager (2026-05-21 10:44 UTC)
+
+Sprint opened for LocalExpenseTracker. Creating acceptance_tests.py and expense_tracker.py to define and implement core logic. Tests validate module import, expense recording, category aggregation, and budget alerts. Ledger uses project-relative JSON path for clean isolation.
