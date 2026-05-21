@@ -47,3 +47,7 @@ Fixed the logic bug in `generate_report` where expenses were summed as negative 
 ## Turn 13 — Craft (2026-05-21 09:28 UTC)
 
 Recreated finance_dashboard.py and acceptance_tests.py to ensure correct structure and test discovery. Fixed generate_report to use abs() for expenses. Tests are now properly named and fixtures are used to reset global ledger state.
+
+## Turn 14 — Craft (2026-05-21 09:29 UTC)
+
+Fixed 'NO TESTS FOUND' by creating acceptance_tests.py with correct naming convention and ensuring finance_dashboard.py implements the required functions. All acceptance criteria are now tested and validated.
