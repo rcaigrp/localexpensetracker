@@ -111,3 +111,7 @@ Re-implemented finance_dashboard.py and acceptance_tests.py to fix 'NO TESTS FOU
 ## Turn 29 — Craft (2026-05-21 10:24 UTC)
 
 Re-implementing finance_dashboard.py and acceptance_tests.py to fix 'NO TESTS FOUND' error. The previous tests were likely empty or malformed. I'm creating a robust implementation with file-based ledger persistence and clear test functions.
+
+## Turn 30 — Craft (2026-05-21 10:26 UTC)
+
+Recreating acceptance_tests.py and finance_dashboard.py to fix NO TESTS FOUND error. Tests will validate all 4 acceptance criteria.
